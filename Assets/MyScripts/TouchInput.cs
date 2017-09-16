@@ -10,9 +10,10 @@ public class TouchInput : MonoBehaviour {
     private GameObject[] touchesOld;
     private RaycastHit hit;
 
+    
     // Use this for initialization
     void Start () {
-		
+        GetComponent<ParticleSystem>().Play();
 	}
 	
 	// Update is called once per frame

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AlienScript : MonoBehaviour {
 
+    public Transform mObject;
+    public float Speed = 3;
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +13,11 @@ public class AlienScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        transform.RotateAround(mObject.position, new Vector3(0, 1, 0), Time.deltaTime * Speed);
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 }
